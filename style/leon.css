@@ -1,5 +1,7 @@
 /* Start Variables */
-
+:root {
+  --main-color: #10cab7;
+}
 /* End Variables */
 /* Start Global Rules */
 * {
@@ -15,7 +17,6 @@ body {
   padding-right: 15px;
   margin-left: auto;
   margin-right: auto;
-  background-color: beige;
 }
 /* Small Screen */
 @media (min-width: 768px) {
@@ -38,6 +39,9 @@ body {
 }
 /* End Global Rules */
 /* Start Header */
+header {
+  padding: 20px;
+}
 header .container {
   display: flex;
   justify-content: space-between;
@@ -84,6 +88,7 @@ header .container .links ul {
   background-color: rgb(218, 205, 205);
   min-width: 190px;
   display: none;
+  z-index: 1;
 }
 header .container .links:hover ul{
   display: block;
@@ -97,12 +102,15 @@ header .container .links ul::before {
   border-style: solid;
   border-color: transparent transparent rgb(218, 205, 205) transparent
 }
+header .container .links ul li:not(:last-child) {
+  border-bottom: 2px solid #ddd;
+}
 header .container .links ul a{
   color: #333;
   text-decoration: none;
   display: block;
   padding: 18px;
-  transition: padding 0.3s, color 0.3s 0.1s;
+  transition: padding 0.3s, color 0.3s 0.1s ;
   position: relative;
 }
 header .container .links ul a:hover {
@@ -110,9 +118,8 @@ header .container .links ul a:hover {
   color: greenyellow;
 }
 header .container .links ul a:hover::before {
-  animation-duration: 0.5s;
-  animation-name: move-triangle;
-  animation-iteration-count: infinite;
+  animation: move-triangle 0.5s forwards linear infinite;
+  border-color:transparent transparent  transparent blueviolet
 }
 header .container .links ul a::before {
   content:"";
@@ -122,19 +129,39 @@ header .container .links ul a::before {
   border-style: solid;
   border-color: transparent transparent  transparent green;
 }
-header .container .links ul li:not(:last-child) {
-  border-bottom: 2px solid #ddd;
-}
+
 @keyframes move-triangle {
   to {
     transform: translateX(4px);
   }
 }
-
-
-
-
-
-
-
 /* End Header */
+/*  Start landing Section  */
+.landing {
+  background-image: url(../images/landing.jpg);
+  height: calc(100vh - 64px);
+  background-size: cover;
+  position: relative;
+}
+.landing .intro-text {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 300px;
+  max-width: 100%;
+
+}
+.landing .intro-text h1 {
+  margin: 0;
+  color: var(--main-color)
+}
+.landing .intro-text p {
+  font-size: 18px;
+  line-height: 1.7;
+  
+}
+
+
+/*  End landing Section  */
