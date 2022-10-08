@@ -15,6 +15,7 @@ body {
   padding-right: 15px;
   margin-left: auto;
   margin-right: auto;
+  background-color: beige;
 }
 /* Small Screen */
 @media (min-width: 768px) {
@@ -36,3 +37,45 @@ body {
   }
 }
 /* End Global Rules */
+/* Start Header */
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .container .logo{
+  width: 60px;
+}
+header .container .links {
+  position: relative;
+
+}
+header .container .links:hover  .icon span:nth-child(2) {
+  width: 100%;
+}
+header .container .links .icon {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  width: 30px;
+}
+header .container .links .icon span {
+  background-color: #333;
+  margin-bottom: 5px;
+  height: 3px;
+}
+header .container .links .icon span:first-child {
+  width: 100%;
+}
+header .container .links .icon span:nth-child(2) {
+  width: 60%;
+  transition: width 0.3s;
+}
+header .container .links .icon span:last-child {
+  width: 100%;
+}
+
+
+
+
+/* End Header */
