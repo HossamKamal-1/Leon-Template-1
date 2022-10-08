@@ -74,6 +74,65 @@ header .container .links .icon span:nth-child(2) {
 header .container .links .icon span:last-child {
   width: 100%;
 }
+header .container .links ul {
+  position: absolute;
+  padding: 0px;
+  right: 0;
+  top: calc(100% + 15px);
+  margin: 0;
+  list-style: none;
+  background-color: rgb(218, 205, 205);
+  min-width: 190px;
+  display: none;
+}
+header .container .links:hover ul{
+  display: block;
+}
+header .container .links ul::before {
+  content: "";
+  position: absolute;
+  right: 5px;
+  top: -20px;
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent transparent rgb(218, 205, 205) transparent
+}
+header .container .links ul a{
+  color: #333;
+  text-decoration: none;
+  display: block;
+  padding: 18px;
+  transition: padding 0.3s, color 0.3s 0.1s;
+  position: relative;
+}
+header .container .links ul a:hover {
+  padding-left: 30px;
+  color: greenyellow;
+}
+header .container .links ul a:hover::before {
+  animation-duration: 0.5s;
+  animation-name: move-triangle;
+  animation-iteration-count: infinite;
+}
+header .container .links ul a::before {
+  content:"";
+  position: absolute;
+  left: 7px;
+  border-width: 8px;
+  border-style: solid;
+  border-color: transparent transparent  transparent green;
+}
+header .container .links ul li:not(:last-child) {
+  border-bottom: 2px solid #ddd;
+}
+@keyframes move-triangle {
+  to {
+    transform: translateX(4px);
+  }
+}
+
+
+
 
 
 
